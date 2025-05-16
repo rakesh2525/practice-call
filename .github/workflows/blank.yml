@@ -32,6 +32,8 @@ jobs:
     uses: rakesh2525/Practice/.github/workflows/blank.yml@main
     with:
       start: "'2025-05-16 10.35'"
+      end: "'2025-05-16 10.39'"
+      dc: "us-east"
      
 
    
