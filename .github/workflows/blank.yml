@@ -28,12 +28,30 @@ on:
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  call-reusable-workflow:
-    uses: rakesh2525/Practice/.github/workflows/blank.yml@main
-    with:
-      start: "'2025-05-16 10.35'"
-      end: "'2025-05-16 10.39'"
-      dc: "us-east"
+  Mute_Alerts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          repository: rakesh2525/Practice
+          ref: main
+          path: devop
+
+      - name: GitHub Context Debug
+        run: |
+          echo $JSON | jq
+        env:
+          JSON: ${{ toJSON(github) }}
+
+      - name: Run Mute Alerts Script
+        shell: bash
+        working-directory: ./devop/
+        run: |
+          # make run-script start=${{ github.event.inputs.start }} end=${{ github.event.inputs.end }} dc=${{ github.event.inputs.dc }}
+          chmod +x hi.sh
+          ./hi.sh
+          echo "start_Time=${{ github.event.inputs.start }}"
      
 
    
