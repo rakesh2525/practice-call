@@ -36,7 +36,7 @@ jobs:
         with:
           repository: rakesh2525/Practice
           ref: main
-          path: devop
+          path: cicd
 
       - name: GitHub Context Debug
         run: |
@@ -46,7 +46,7 @@ jobs:
 
       - name: Run Mute Alerts Script
         shell: bash
-        working-directory: ./devop/
+        working-directory: cicd/devop/
         run: |
           # make run-script start=${{ github.event.inputs.start }} end=${{ github.event.inputs.end }} dc=${{ github.event.inputs.dc }}
           chmod +x hi.sh
