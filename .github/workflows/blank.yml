@@ -31,6 +31,10 @@ on:
 jobs:
   call-blank:
     uses: rakesh2525/Practice/.github/workflows/blank.yml@main
+    with:
+      start: "2024-05-20T00:00:00Z"
+      end: "2024-05-20T23:59:59Z"
+      dc: "example-dc"
     
 
   
